@@ -86,9 +86,9 @@ public class MatchManagerScript : MonoBehaviour {
 	//vertical match? 
 	public bool GridHasVerticalMatch(int x, int y)
 	{
-		GameObject token1 = _gameManager.gridArray[x , y]; // changed this and can not longer move to attempt matches
-		GameObject token2 = _gameManager.gridArray[x , y];
-		GameObject token3 = _gameManager.gridArray[x , y];
+		GameObject token1 = _gameManager.gridArray[x , y +0]; // changed this and can not longer move to attempt matches
+		GameObject token2 = _gameManager.gridArray[x , y+1];
+		GameObject token3 = _gameManager.gridArray[x , y+2];
 		
 		if(token1 != null && token2 != null && token3 != null){
 			SpriteRenderer sr1 = token1.GetComponent<SpriteRenderer>();
