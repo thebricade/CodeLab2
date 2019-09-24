@@ -33,6 +33,9 @@ public class InputManagerScript : MonoBehaviour {
 			}
 		}
 
+		
+		
+		
 	}
 
 	public int CommentFunc(int x, int y){
