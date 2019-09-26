@@ -14,10 +14,11 @@ public class MatchManagerScript : MonoBehaviour {
 	}
 
 	public virtual bool GridHasMatch(){ // this is being called to find a match? 
-		bool match = false;		
+		bool match = false;	
+		
 		for(int x = 0; x < _gameManager.gridWidth; x++) // cycles through all columns (x)
 		{ 
-			for(int y = 0; y < _gameManager.gridHeight ; y++) //cycles through horizontal tokens in current column
+			for(int y = 0; y < _gameManager.gridHeight ; y++) //cycles through vertical tokens in current column
 			{
 				if (x < _gameManager.gridWidth - 2)
 				{
@@ -144,9 +145,11 @@ public class MatchManagerScript : MonoBehaviour {
 
 					int horizonMatchLength = _GetHorizontalMatchLength(x, y);
 
-					if(horizonMatchLength > 2){
+					if(horizonMatchLength > 2)
+					{
 
-						for(int i = x; i < x + horizonMatchLength; i++){
+						for(int i = x; i < x + horizonMatchLength; i++)
+						{
 							GameObject token = _gameManager.gridArray[i, y]; 
 							Destroy(token);
 
@@ -159,9 +162,11 @@ public class MatchManagerScript : MonoBehaviour {
 
 					int verticalMatchLength = _GetVerticalMatchLength(x, y);
 
-					if(verticalMatchLength > 2){
+					if(verticalMatchLength > 2)
+					{
 
-						for(int i = x; i < x + verticalMatchLength; i++){
+						for(int i = x; i < x + verticalMatchLength; i++)
+						{
 							GameObject token = _gameManager.gridArray[x, i]; 
 							Destroy(token);
 
