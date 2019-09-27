@@ -16,6 +16,10 @@ public class GameManagerScript : MonoBehaviour {
 	protected Object[] tokenTypes;
 	GameObject selected;
 
+	
+
+
+	
 	public virtual void Start () {
 		tokenTypes = (Object[])Resources.LoadAll("Tokens/");
 		gridArray = new GameObject[gridWidth, gridHeight];
@@ -30,6 +34,7 @@ public class GameManagerScript : MonoBehaviour {
 		if(!GridHasEmpty()){
 			if(matchManager.GridHasMatch()){
 				matchManager.RemoveMatches();
+				
 			} else {
 				inputManager.SelectToken();
 			}

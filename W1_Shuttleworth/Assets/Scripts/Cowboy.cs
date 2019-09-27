@@ -11,7 +11,8 @@ public class Cowboy : MonoBehaviour
     
     void Start()
     {
-        CurrencyManager = GameObject.Find("CurrencyManager");
+        //CurrencyManager = GameObject.Find("CurrencyManager");
+        
         StartCoroutine(GoodbyeCowboy(Random.Range(5, 10)));
     }
 
@@ -25,7 +26,8 @@ public class Cowboy : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         print("Goodbye");
-        CurrencyManager.GetComponent<FreemiumCurrency>().BasicCowboy();
+      // CurrencyManager.GetComponent<FreemiumCurrency>().BasicCowboy();
+        FreemiumCurrency.instance.BasicCowboy();
         Destroy(gameObject);
         
     }
