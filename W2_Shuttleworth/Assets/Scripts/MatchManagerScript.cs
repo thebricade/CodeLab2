@@ -4,9 +4,13 @@ using UnityEngine;
 public class MatchManagerScript : MonoBehaviour {
 	
 	private GameManagerScript _gameManager;
+	public GameObject TurnManager;
 
-
-	//what is virtual void? abstract class? overwriting ? 
+	public void Awake()
+	{
+		TurnManager = GameObject.Find("SceneManager");
+	}
+	
 	public virtual void Start () 
 	{
 		
@@ -35,7 +39,7 @@ public class MatchManagerScript : MonoBehaviour {
 				
 			}
 		}
-		
+		//TurnManager.GetComponent<GameSceneManager>().TurnDecrease();
 		return match;
 	}
 
@@ -136,7 +140,9 @@ public class MatchManagerScript : MonoBehaviour {
 
 	public virtual int RemoveMatches(){
 		int numRemoved = 0;
-
+		//maybe should change the name 
+	//	TurnManager.GetComponent<GameSceneManager>().TurnDecrease();
+		
 		for(int x = 0; x < _gameManager.gridWidth; x++)
 		{
 			for(int y = 0; y < _gameManager.gridHeight ; y++)
@@ -147,7 +153,8 @@ public class MatchManagerScript : MonoBehaviour {
 
 					if(horizonMatchLength > 2)
 					{
-
+						//not here this is inside a loop silly 
+						//GameSceneManager.GetComponent<GameSceneManager>().TurnDecrease();G
 						for(int i = x; i < x + horizonMatchLength; i++)
 						{
 							GameObject token = _gameManager.gridArray[i, y]; 
@@ -164,7 +171,7 @@ public class MatchManagerScript : MonoBehaviour {
 
 					if(verticalMatchLength > 2)
 					{
-
+						//GameSceneManager.GetComponent<GameSceneManager>().TurnDecrease();
 						for(int i = x; i < x + verticalMatchLength; i++)
 						{
 							GameObject token = _gameManager.gridArray[x, i]; 

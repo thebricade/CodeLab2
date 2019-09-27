@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7564b905253fe4ed0a619348e6af7408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManager: {fileID: 0}
 --- !u!114 &636344699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +311,7 @@ MonoBehaviour:
   move: 0
   lerpPercent: 0
   lerpSpeed: 0.05
+  TurnManager: {fileID: 0}
 --- !u!114 &636344701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +515,7 @@ GameObject:
   - component: {fileID: 2122310309}
   - component: {fileID: 2122310311}
   - component: {fileID: 2122310310}
+  - component: {fileID: 2122310312}
   m_Layer: 5
   m_Name: TurnCounter
   m_TagString: Untagged
@@ -536,7 +539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -139, y: 106}
+  m_AnchoredPosition: {x: -296.8, y: 215.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2122310310
@@ -659,3 +662,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122310308}
   m_CullTransparentMesh: 0
+--- !u!114 &2122310312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122310308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bc034accf19fe4487b40fb5dcb76e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 2122310308}
+  turnAmount: 10

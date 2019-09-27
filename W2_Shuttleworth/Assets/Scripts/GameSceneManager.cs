@@ -13,7 +13,7 @@ public enum GameScenes
 public class GameSceneManager : MonoBehaviour
 {
     public static GameSceneManager instance = null;
-
+    //public int turnAmount; 
     private void Awake()
     {
         if (instance == null)
@@ -34,10 +34,15 @@ public class GameSceneManager : MonoBehaviour
             case "Mainmenu":
                 break;
             case "GameLevel":
+               // turnAmount = 10; 
                 SceneManager.LoadScene("DailySeedScene");
                 break;
             case "Endgame":
                 break;
         }
     }
+
+
+    
+    //null error on text from main menu
 }

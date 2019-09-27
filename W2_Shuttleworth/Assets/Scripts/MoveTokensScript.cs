@@ -19,6 +19,13 @@ public class MoveTokensScript : MonoBehaviour {
 	Vector2 exchangeGridPos1;
 	Vector2 exchangeGridPos2;
 
+	public GameObject TurnManager; 
+	
+	public void Awake()
+	{
+		TurnManager = GameObject.Find("TurnCounter");
+	}
+
 	//this runs at the start
 	public virtual void Start () {
 		gameManager = GetComponent<GameManagerScript>();
@@ -76,6 +83,8 @@ public class MoveTokensScript : MonoBehaviour {
 			gameManager.gridArray[(int)exchangeGridPos1.x, (int)exchangeGridPos1.y] = exchangeToken2;
 
 			if(!matchManager.GridHasMatch() && userSwap){
+				TurnManager.GetComponent<DisplayMoves>().TurnDecrease();
+				
 				SetupTokenExchange(exchangeToken1, exchangeGridPos2, exchangeToken2, exchangeGridPos1, false);
 			} else {
 				exchangeToken1 = null;
